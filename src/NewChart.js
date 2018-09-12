@@ -12,6 +12,11 @@ class NewChart extends Component {
           scale={{x:'time'}}
           theme={V.VictoryTheme}
         >
+          <V.VictoryAxis
+            style={{ tickLabels: { angle: -15 } }}
+
+          />
+          <V.VictoryAxis dependentAxis />
           <V.VictoryBar
             data={formatData}
             x="date"
