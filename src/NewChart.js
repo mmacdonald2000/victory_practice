@@ -22,13 +22,17 @@ class NewChart extends Component {
             x="date"
             y="profit"
           />
+          <V.VictoryLine
+            data={moreData}
+            x='date'
+            y='profit'
+          />
         </V.VictoryChart>
       </div>
     );
   }
 }
 export default NewChart;
-
 
 const dummyData= {
 	"cols": [
@@ -440,11 +444,21 @@ const dummyData= {
 }
 
 const formatData=[];
-for (var i = 0; i < dummyData.data.length; i++) {
+for (let i = 0; i < dummyData.data.length; i++) {
   formatData.push(
     {
       date: new Date(dummyData.data[i][0]),
       profit: Number(dummyData.data[i][1].slice(1)),
+    }
+  )
+}
+
+const moreData=[];
+for (let i = 0; i < dummyData.data.length; i++) {
+  moreData.push(
+    {
+      date: new Date(dummyData.data[i][0]),
+      profit: Number(dummyData.data[i][1].slice(1)*10+1),
     }
   )
 }

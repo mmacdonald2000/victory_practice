@@ -11,7 +11,7 @@ class TutorialChart extends Component {
           theme={V.VictoryTheme}
         >
           <V.VictoryAxis
-            tickValues={[1, 2, 3, 4]}
+
             tickFormat={['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4']}
           />
           <V.VictoryAxis
@@ -19,6 +19,11 @@ class TutorialChart extends Component {
             tickFormat={x => (`$${x / 1000 }k`)}
           />
           <V.VictoryBar
+            data={data}
+            x='quarter'
+            y='earnings'
+          />
+          <V.VictoryLine
             data={data}
             x='quarter'
             y='earnings'
